@@ -9,6 +9,8 @@ $result = $conexion->query("SELECT * FROM usuarios3");
 <head>
     <meta charset="UTF-8">
     <title>CRUD Usuarios</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
 </head>
 <body>
     <h1>Lista de Usuarios</h1>
@@ -40,3 +42,4 @@ $result = $conexion->query("SELECT * FROM usuarios3");
     </form>
 </body>
 </html>
+
