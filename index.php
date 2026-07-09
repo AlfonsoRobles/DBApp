@@ -33,7 +33,7 @@ $result = $conexion->query("SELECT * FROM usuarios3");
     </table>
 
     <h2>Agregar Usuario</h2>
-    <form action="insertar.php" method="POST">
+    <form action="agregar.php" method="POST">
         <input type="text" name="nombre" placeholder="Nombre" required>
         <input type="email" name="correo" placeholder="Correo" required>
         <button type="submit">Agregar</button>
