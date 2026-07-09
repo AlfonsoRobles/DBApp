@@ -1,22 +1,14 @@
 <?php
-include("conexion.php");
+require_once("conexion.php");
 
-$id = $_GET['id'] ?? 0;
-if (!is_numeric($id)) {
-    die("ID inválido");
-}
+$id = $_GET['id'];
 
-$stmt = $conn->prepare("DELETE FROM usuarios3 WHERE id=?");
-$stmt->bind_param("i", $id);
+$sql = "DELETE FROM usuarios3 WHERE id=$id";
+$result = $conexion->query($sql);
 
-if ($stmt->execute()) {
-    if ($stmt->affected_rows > 0) {
-        header("Location: index.php");
-        exit;
-    } else {
-        echo "No se encontró el registro con ID: $id";
-    }
+if ($result) {
+    header("Location: index.php");
+    exit;
 } else {
-    echo "Error al eliminar: " . $stmt->error;
+    echo "Error al eliminar: " . $conexion->error;
 }
-?>
