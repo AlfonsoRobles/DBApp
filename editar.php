@@ -27,14 +27,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Editar Usuario</title>
+    <!-- Aquí se liga tu archivo de estilos -->
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+<div class="container">
     <h1>Editar Usuario</h1>
-    <form action="editar.php" method="POST">
+    <form class="formulario" action="editar.php" method="POST">
         <input type="hidden" name="id" value="<?= $row['id'] ?>">
         <input type="text" name="nombre" value="<?= $row['nombre'] ?>" required>
         <input type="email" name="correo" value="<?= $row['correo'] ?>" required>
         <button type="submit">Guardar</button>
     </form>
+</div>
 </body>
 </html>
