@@ -1,20 +1,17 @@
 <?php
-// Leer las variables de entorno definidas en Railway
-$host = getenv("MYSQLHOST");       // Ejemplo: hayabusa.proxy.rlwy.net
-$user = getenv("MYSQLUSER");       // Ejemplo: root
-$password = getenv("MYSQLPASSWORD"); // Contraseña generada por Railway
-$dbname = getenv("MYSQLDATABASE"); // Ejemplo: railway
-$port = (int)getenv("MYSQLPORT");  // Ejemplo: 42448
+$host = "hayabusa.proxy.rlwy.net";
+$user = "root";
+$password = "bDoZCfpoScHKONtCJHAXHvbcTMhbqgHp"; // reemplaza con la contraseña real que te da Railway
+$database = "railway";
+$port = 42448;
 
-// Intentar la conexión
-$conn = new mysqli($host, $user, $password, $dbname, $port);
+// Crear conexión
+$conexion = new mysqli($host, $user, $password, $database, $port);
 
-// Verificar si hubo error
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+// Verificar conexión
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
 }
 
-// Si llegaste aquí, la conexión fue exitosa
-// Puedes usar $conn en tu CRUD
-?>
+
 
