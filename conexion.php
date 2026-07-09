@@ -3,10 +3,13 @@ $host = getenv("MYSQLHOST");
 $user = getenv("MYSQLUSER");
 $password = getenv("MYSQLPASSWORD");
 $dbname = getenv("MYSQLDATABASE");
-$port = getenv("MYSQLPORT");
+$port = (int)getenv("MYSQLPORT");
 
-// Convertir el puerto a entero
-$conn = new mysqli($host, $user, $password, $dbname, (int)$port);
+if (!$host || !$user || !$password || !$dbname || !$port) {
+    die("Error: Variables de entorno de MySQL no están definidas correctamente.");
+}
+
+$conn = new mysqli($host, $user, $password, $dbname, $port);
 
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
