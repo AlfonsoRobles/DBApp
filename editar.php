@@ -1,5 +1,5 @@
 <?php
-require_once("conexion.php"); // asegura que se cargue la conexión
+require_once("conexion.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];
@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $row = $result->fetch_assoc();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
