@@ -1,7 +1,8 @@
 <?php
+// Datos de conexión a Railway
 $host = "hayabusa.proxy.rlwy.net";
 $user = "root";
-$password = "bDoZCfpoScHKONtCJHAXHvbcTMhbqgHp"; // reemplaza con la contraseña real que te da Railway
+$password = "bDoZCfpoScHKONtCJHAXHvbcTMhbqgHp"; // reemplaza con la contraseña real
 $database = "railway";
 $port = 42448;
 
@@ -12,6 +13,5 @@ $conexion = new mysqli($host, $user, $password, $database, $port);
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
-
 
 
